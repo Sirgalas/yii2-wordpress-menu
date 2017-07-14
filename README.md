@@ -80,4 +80,7 @@ frontend
  ```
 
 
-миграция php yii migrate/ --migrationPath=@vendor/sirgalas/yii2-wordperss-menu/migrations
+миграция
+```
+php yii migrate/ --migrationPath=@vendor/sirgalas/yii2-wordperss-menu/migrations
+```
