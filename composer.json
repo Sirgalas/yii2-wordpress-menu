@@ -1,0 +1,40 @@
+{
+    "name": "sirgalas/yii2-edit-translation",
+    "description": "extension nifying two global extensions zelenin/yii2-i18n-module and kartik-v/yii2-grid",
+    "version": "0.1.0",
+    "type": "yii2-extension",
+    "keywords": [
+        "yii2",
+        "translation",
+        "extension",
+        "widget",
+        "grid"
+    ],
+    "homepage": "https://github.com/Sirgalas/yii2-edit-translation",
+    "time": "2017-04-20",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Serge Beloventsev",
+            "email": "hudos@rambler.ru",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/zelenin/yii2-i18n-module/issues",
+        "source": "https://github.com/zelenin/yii2-i18n-module"
+    },
+    "require": {
+    	
+        "yiisoft/yii2": "~2",
+        "zelenin/yii2-i18n-module": "dev-master",
+		"kartik-v/yii2-grid": "@dev",
+        "kartik-v/yii2-editable": "@dev",
+        "kartik-v/yii2-mpdf": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "sirgalas\\translation\\": ""
+        }
+    }
+}

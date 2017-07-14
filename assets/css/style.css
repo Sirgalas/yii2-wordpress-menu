@@ -1,0 +1,108 @@
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.sortable-ui{
+    height: 500px;
+    overflow: auto;
+    display: block;
+    float: left;
+    padding: 0;
+    width: 60%;
+    background: #fff;
+    border: 1px solid #d2d6de;
+
+}
+
+
+.col-lg-6 .sortable-ui{
+    min-height: 900px;
+}
+.col-lg-6 .sortable-ui li{
+    height: 70px;
+}
+
+.draggable{
+    z-index: 5000;
+}
+
+.sortable-ui li{
+    list-style: none;
+    padding: 10px 50px;
+    font-size: 15px;
+    clear:both;
+    color:#31708f;
+    border:1px solid #31708f;
+    border-radius:4px;
+    background:#D9EDF7;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+.sortable-ui li span{
+    float: right;
+    margin-top: 2px;
+    cursor: pointer;
+}
+/*
+.sortable-ui .extra{
+    background-color: transparent;
+    border: medium none;
+    padding: 10px 17px 0 0;
+    position: absolute;
+    right: 0;
+    width: auto;
+    z-index: 1;
+}*/
+
+.sortable-ui.extra  {
+    background-color: #c6c6c6;
+    border: 1px solid #a8a8a8;
+    border-radius: 4px;
+    color: #5b5b5b;
+    height: 150px;
+    width: 40%;
+    min-height:10px;
+    margin-top: 10px;
+    padding: 15px;
+    z-index: 0;
+}
+
+
+.sortable-ui li img{
+    width: 40px;
+}
+
+.sortable-ui li {
+    font-size: 15px;
+    list-style: outside none none;
+    padding: 10px 50px;
+}
+.showInput{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+body .dropzone .dz-default.dz-message{
+
+    margin-left: -132px;
+    width: 274px;
+    background-size: 100% ;
+    background-image: url("../image/spritemap.png");
+}
+
+body .dropFileHide{
+    display: none;
+}
+
