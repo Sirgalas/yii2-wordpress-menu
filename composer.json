@@ -1,17 +1,16 @@
 {
-    "name": "sirgalas/yii2-edit-translation",
+    "name": "sirgalas/yii2-wordpress-menu",
     "description": "extension nifying two global extensions zelenin/yii2-i18n-module and kartik-v/yii2-grid",
     "version": "0.1.0",
     "type": "yii2-extension",
     "keywords": [
         "yii2",
-        "translation",
+        "menu",
         "extension",
-        "widget",
-        "grid"
+        "widget"
     ],
-    "homepage": "https://github.com/Sirgalas/yii2-edit-translation",
-    "time": "2017-04-20",
+    "homepage": "https://github.com/Sirgalas/yii2-wordpress-menu",
+    "time": "2017-07-14",
     "license": "MIT",
     "authors": [
         {
@@ -21,20 +20,16 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/zelenin/yii2-i18n-module/issues",
-        "source": "https://github.com/zelenin/yii2-i18n-module"
+        "issues": "https://github.com/sirgalas/yii2-wordpress-menu/issues",
+        "source": "https://github.com/sirgalas/yii2-wordpress-menu"
     },
     "require": {
-    	
-        "yiisoft/yii2": "~2",
-        "zelenin/yii2-i18n-module": "dev-master",
-		"kartik-v/yii2-grid": "@dev",
-        "kartik-v/yii2-editable": "@dev",
-        "kartik-v/yii2-mpdf": "dev-master"
+        "zainiafzan/yii2-dropzone": "dev-master",
+        "kartik-v/yii2-widget-select2": "@dev"
     },
     "autoload": {
         "psr-4": {
-            "sirgalas\\translation\\": ""
+            "sirgalas\\yii2-wordpress-menu\\": ""
         }
     }
 }

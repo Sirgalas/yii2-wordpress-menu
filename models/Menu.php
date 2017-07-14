@@ -90,7 +90,7 @@ class Menu extends ActiveRecord
                     $allMenu=Menu::find()->all();
                     $content='content';
                 }
-                $dropMenuAll = $this->Menuarr($allMenu,$decode->menuItem,$content,$nameAlias);// встроиная таблица забыл
+                $dropMenuAll = $this->Menuarr($allMenu,$decode->menuItem,$content,$nameAlias);
                 $arrMenu[] = ['label' => $decode->text, 'url' => '', 'items' => $dropMenuAll];
             }elseif(isset($decode->depthMenu)){
                 $dropMenuAll = $this->menuDepthArr($decode->depthMenu);
