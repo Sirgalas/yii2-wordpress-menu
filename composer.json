@@ -1,6 +1,6 @@
 {
     "name": "sirgalas/yii2-wordpress-menu",
-    "description": "extension nifying two global extensions zelenin/yii2-i18n-module and kartik-v/yii2-grid",
+    "description": "extension trying to create a menu like in cms wordpress",
     "version": "0.1.0",
     "type": "yii2-extension",
     "keywords": [
