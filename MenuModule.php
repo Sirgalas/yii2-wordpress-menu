@@ -37,7 +37,7 @@ class MenuModule extends \yii\base\Module
         Yii::$app->i18n->translations['sirgalas/menu/translit'] = [
             'class'          => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath'       => '@vendor/sirgalas/yii2-wordperss-menu/messages',
+            'basePath'       => '@vendor/sirgalas/yii2-wordpress-menu/messages',
         ];
     }
 
