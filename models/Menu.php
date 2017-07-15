@@ -86,7 +86,7 @@ class Menu extends ActiveRecord
         $contents=json_decode($menu->$content);
         foreach ($contents->menus as $decode) {
             if (isset($decode->menuItem)) {
-                if(!isset(Yii::$app->modules['menu']->modelDb)) {
+                if(!isset(Yii::$app->modules['menu']['modelDb'])) {
                     $allMenu=Menu::find()->all();
                     $content='content';
                 }
