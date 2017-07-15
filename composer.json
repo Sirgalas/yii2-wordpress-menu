@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "sirgalas\\yii2-wordpress-menu\\": ""
+            "sirgalas\\menu\\": ""
         }
     }
 }
