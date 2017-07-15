@@ -118,7 +118,6 @@ class Menu extends ActiveRecord
                         foreach ($value as $keys => $val) {
                             $item[$keys]=$val;
                         }
-                        $item['option']='menu';
                     }
                 }
             }
