@@ -112,9 +112,8 @@ class Menu extends ActiveRecord
                 foreach ($objectVars as $key => $value) {
                     if (strpos($key, 'extra') === 0) {
                         foreach ($value as $keys => $val) {
-                            $item[$keys]=$val;
+                            $item['extra']=$val;
                         }
-                        $item['option']='extra';
                     }else{
                         foreach ($value as $keys => $val) {
                             $item[$keys]=$val;
