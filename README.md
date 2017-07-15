@@ -99,7 +99,7 @@ commom\config\main.php
 use sirgalas\menu\behaviors\MenuBaseWordpressBehavior;
 'BaseMenu' => [
                 'class'             =>  MenuBaseWordpressBehavior::className(),
-                'nameModel'         =>  '\common\models\FrontendSetup',
+                'nameModel'         =>  '\common\models\YourModel',
                 'dbName'            =>  'yourtable',
                 'idBehavior'        =>  'id',
                 'name'              =>  'name',
