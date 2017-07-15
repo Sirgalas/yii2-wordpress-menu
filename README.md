@@ -44,7 +44,7 @@ common
 common\config\main.php
 'menu'  =>[
             'class' =>  'sirgalas\menu\MenuModule',
-            'modelDb' =>  '\common\models\FrontendSetup',
+            'modelDb' =>  '\common\models\YourModel',
         ],
 ```
 + **modelDb** - в случае если используется своя база данных  без использования миграции
@@ -84,3 +84,35 @@ frontend
 ```
 php yii migrate/ --migrationPath=@vendor/sirgalas/yii2-wordperss-menu/migrations
 ```
+
+
+Если вы хотите использовать свою базу то для этого необходимо (повторяю ещё раз)  в
+```php
+commom\config\main.php
+'menu'  =>[
+            'class' =>  'sirgalas\menu\MenuModule',
+            'modelDb' =>  '\common\models\YourModel',
+        ],
+```
+в моделе необходимо подключить поведение
+```php
+use sirgalas\menu\behaviors\MenuBaseWordpressBehavior;
+'BaseMenu' => [
+                'class'             =>  MenuBaseWordpressBehavior::className(),
+                'nameModel'         =>  '\common\models\FrontendSetup',
+                'dbName'            =>  'yourtable',
+                'idBehavior'        =>  'id',
+                'name'              =>  'name',
+                'content'           =>  'content',
+                'serviceField'      =>  'description',
+                'nameServiceField'  =>  'menus'
+            ],
+```
++ ***nameModel*** namespace модели
++ ***dbName*** название таблицы
++ ***idBehavior*** столбец id
++ ***name*** столбец содержащий название строки базы
++ ***content*** солбец куда необходимо сохранять данные меню
++ ***serviceField nameServiceField*** используются для поисковой модели, это поисковое поле для выборки из вашей базы всех меню
+к примеру у меня это так
+```php 'description'=>'menus'```
