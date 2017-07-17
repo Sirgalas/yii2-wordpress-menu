@@ -4,7 +4,6 @@ jQuery(document).ready(function(){
     var maxDeptch;
     var classBootstrap;
     var prev;
-    var offsets=$('#menu-to-edit').offset();
     $(".sortable-ui").sortable({
         grid:[50,50],
         //items:"li:not(.ui-state-disabled)",
@@ -12,10 +11,12 @@ jQuery(document).ready(function(){
         start: function (event, ui) {
             startX = event.clientX;
             ui.item.removeClass(classBootstrap);
+
         },
         beforeStop: function(event, ui){
+            var parent = ui.helper.context.parentNode;
+            var offsets=parent.getBoundingClientRect();
             devision = Math.round((ui.offset.left - offsets.left) / depth);
-
         },
         stop: function (event, ui) {
             id=ui.item.prev().index();
@@ -29,6 +30,7 @@ jQuery(document).ready(function(){
                 classDeptch = maxDeptch;
             } else {
                 classDeptch = devision;
+
             }
             if(classDeptch>0){
                 var siblingItemDepht = Number(classDeptch)-Number(1);
