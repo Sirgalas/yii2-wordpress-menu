@@ -103,22 +103,18 @@ class Menu extends ActiveRecord
         return $arrMenu;
     }
 
-    public function Menuarr($allMenu,$parentId,$content){
+     public function Menuarr($allMenu,$parentId,$content){
         $item=[];
         foreach ($allMenu as $menu){
             if($menu->id==$parentId){
                 $dropMenu = json_decode($menu->$content);
                 $objectVars = get_object_vars($dropMenu);
                 foreach ($objectVars as $key => $value) {
-                    if (strpos($key, 'extra') === 0) {
-                        foreach ($value as $keys => $val) {
-                            $item['extra']=$val;
-                        }
-                    }else{
-                        foreach ($value as $keys => $val) {
-                            $item[$keys]=$val;
-                        }
+                    $arrExtra=array();
+                    foreach ($value as $keys => $val) {
+                        $arrExtra[$keys]=$val;
                     }
+                    $item[$key]=$arrExtra;
                 }
             }
         }
