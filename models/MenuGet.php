@@ -31,7 +31,7 @@ class MenuGet extends Menu
         if(isset($json->$name)){
             $str='';
             $count=0;
-            $idStr=substr(key($json->$name),0,-1);
+            $idStr=substr(key($json->$name),0,-1).'s';
             foreach ($json->$name as $menu){
 
                 if(isset($menu->imgPath)){
