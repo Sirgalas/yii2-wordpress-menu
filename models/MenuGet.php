@@ -35,7 +35,7 @@ class MenuGet extends Menu
             foreach ($json->$name as $menu){
 
                 if(isset($menu->imgPath)){
-                    $img =Html::img($menu->imgPath.'/'.$menu->imgName);
+                     $img =Html::img($menu->imgPath.'/'.$menu->imgName,['data-pathimage'=>$menu->imgPath,'data-filename'=>$menu->imgName]);
                 }else{
                     $img='';
                 }
