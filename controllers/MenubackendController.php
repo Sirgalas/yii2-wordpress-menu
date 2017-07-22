@@ -75,6 +75,7 @@ class MenubackendController extends Controller
                        'found'  =>$found,
                        'menuGet'=> $menuGet,
                        'modelForNameInput'  =>  $modelForNameInput,
+                       'parentId'   => $get['paretnid'],
                        'id'     =>  $get['id'],
                        'uploadModel' => $uploadModel
                    ]);
@@ -140,6 +141,7 @@ class MenubackendController extends Controller
                         'module' => $module,
                         'menuGet'=> $menuGet,
                         'found'  =>$found,
+                        'parentId'   => $get['paretnid'],
                         'id'     =>  $get['id'],
                         'uploadModel' => $uploadModel,
                         'modelForNameInput'=> $modelForNameInput,

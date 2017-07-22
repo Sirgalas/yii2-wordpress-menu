@@ -80,14 +80,14 @@ jQuery(document).ready(function(){
         e.preventDefault();
         $("#dropFileHide").hide();
         var url = $(this).data('url');
-        var id = $(this).parents('li.wells').attr('data-item');
+        var id = $(this).parents('li.wells').attr('id');
         var className = $(this).parents('li.wells').attr('data-model');
         var extId=$(this).parents('ul').attr('data-class');
-        var fullId=extId+'-'+id;
+      
         $.ajax({
             type: "GET",
             url:url,
-            data:"id="+fullId+"&className="+className,
+            data:"paretnid="+extId+"&id="+id+"&className="+className,
             success: function(data){
                 $(".dropFileHide").html(data);
                 $(".dropFileHide").show();
@@ -321,6 +321,7 @@ jQuery(document).ready(function(){
         return false;
     });
 });
+
 if($('li').is('.wells')){
     var maxLi=0;
     $("#menu-to-edit li").each(function (){
@@ -330,6 +331,7 @@ if($('li').is('.wells')){
 }else{
     var count=0;
 }
+
 
 function log (evt) {
     if (!evt) {
