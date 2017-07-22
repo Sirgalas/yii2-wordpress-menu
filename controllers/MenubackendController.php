@@ -15,6 +15,7 @@ use sirgalas\menu\models\Menu;
 
 class MenubackendController extends Controller
 {
+  public $enableCsrfValidation = false;//времено пока не разберусь где проблема;
     public function actionIndex(){
         $searchModel = new MenuSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
