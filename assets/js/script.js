@@ -4,6 +4,7 @@ jQuery(document).ready(function(){
     var maxDeptch;
     var classBootstrap;
     var prev;
+    var offsets=$('#menu-to-edit').offset();
     $(".sortable-ui").sortable({
         grid:[50,50],
         //items:"li:not(.ui-state-disabled)",
@@ -11,12 +12,10 @@ jQuery(document).ready(function(){
         start: function (event, ui) {
             startX = event.clientX;
             ui.item.removeClass(classBootstrap);
-
         },
         beforeStop: function(event, ui){
-            var parent = ui.helper.context.parentNode;
-            var offsets=parent.getBoundingClientRect();
             devision = Math.round((ui.offset.left - offsets.left) / depth);
+
         },
         stop: function (event, ui) {
             id=ui.item.prev().index();
@@ -30,7 +29,6 @@ jQuery(document).ready(function(){
                 classDeptch = maxDeptch;
             } else {
                 classDeptch = devision;
-
             }
             if(classDeptch>0){
                 var siblingItemDepht = Number(classDeptch)-Number(1);
@@ -112,12 +110,13 @@ jQuery(document).ready(function(){
                 var menuItem = $(this).data('menu');
                 var depth = parseInt($(this).attr('data-depth'));
                 var item = $(this).attr('data-item');
-                var text = $(this).attr('data-title');
-                var key = 'menu' + $(this).attr('data-item'); if ($(this).find('.tilteInput').val().length == 0) {
+                var key = 'menu' + $(this).attr('data-item');
+                if ($(this).find('.tilteInput').val().length == 0) {
                     title = $(this).data('title').toString();
                 } else {
                     title = $(this).find('.tilteInput').val();
                 }
+                alert(title);
                 if ($(this).find('.classInput').val().length == 0) {
                     classItem = false;
                 } else {
@@ -133,7 +132,7 @@ jQuery(document).ready(function(){
                 } else {
                     aliasInput = $(this).find('.aliasInput').val();
                 }
-                var addmenu = {menuItem: menuItem, depth: depth,item:item,text:text,classItem:classItem,idInput:idInput,aliasInput:aliasInput}
+                var addmenu = {menuItem: menuItem, depth: depth,item:item,text:title,classItem:classItem,idInput:idInput,aliasInput:aliasInput}
 
             } else {
 
@@ -305,6 +304,8 @@ jQuery(document).ready(function(){
         var inputTitleName = inputTitle.attr('name');
         var inputTitleVal = inputTitle.val();
         var oData = new FormData(document.getElementById('formMenu'));
+        var csrf = $('input[name = "_csrf-backend"]').val();
+        oData.append("_csrf-backend",csrf);
         oData.append(inputTitleName,inputTitleVal);
         oData.append(nameInput, JSON.stringify(menus, "", 4));
         if($('#secures').hasAttr('data-nameservicefield')){
@@ -320,7 +321,6 @@ jQuery(document).ready(function(){
         return false;
     });
 });
-
 if($('li').is('.wells')){
     var maxLi=0;
     $("#menu-to-edit li").each(function (){
@@ -330,7 +330,6 @@ if($('li').is('.wells')){
 }else{
     var count=0;
 }
-
 
 function log (evt) {
     if (!evt) {
