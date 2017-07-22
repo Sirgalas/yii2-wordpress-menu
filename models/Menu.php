@@ -86,15 +86,20 @@ class Menu extends ActiveRecord
         $contents=json_decode($menu->$content);
         foreach ($contents->menus as $decode) {
             if (isset($decode->menuItem)) {
+                if(isset($decode->aliasInput)){
+                    $url=$decode->aliasInput;
+                }else{
+                    $url='#';
+                }
                 if(!isset(Yii::$app->modules['menu']['modelDb'])) {
                     $allMenu=Menu::find()->all();
                     $content='content';
                 }
                 $dropMenuAll = $this->Menuarr($allMenu,$decode->menuItem,$content,$nameAlias);
-                $arrMenu[] = ['label' => $decode->text, 'url' => '', 'items' => $dropMenuAll];
+                $arrMenu[] = ['label' => $decode->text, 'url' => $url, 'items' => $dropMenuAll];
             }elseif(isset($decode->depthMenu)){
                 $dropMenuAll = $this->menuDepthArr($decode->depthMenu);
-                $arrMenu[] = ['label' => $decode->text, 'url' => '', 'items' => $dropMenuAll];
+                $arrMenu[] = ['label' => $decode->text, 'url' => $url, 'items' => $dropMenuAll];
             }
             else {
                 $arrMenu[] = ['label' => $decode->title,'url' => [$decode->path,$nameAlias=>$decode->alias]];
