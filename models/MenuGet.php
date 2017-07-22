@@ -19,12 +19,10 @@ class MenuGet extends Menu
         if(isset(Yii::$app->modules['menu']->modelDb)) {
             $test=Yii::$app->modules['menu']->modelDb;
             $model=new $test;
-
-            return ArrayHelper::map($test::find()->asArray()->all(),$model->getIdMenuBechavior(),$model->getName());
+            return ArrayHelper::map($test::find()->where([$model->getServiceField()=>$model->getNameServiceField()])->asArray()->all(),$model->getIdMenuBechavior(),$model->getName());
         }else{
             return ArrayHelper::map(Menu::find()->asArray()->all(),'id','name');
         }
-
     }
 
     public function getMenu($json,$module,$name){
@@ -33,7 +31,6 @@ class MenuGet extends Menu
             $count=0;
             $idStr=substr(key($json->$name),0,-1).'s';
             foreach ($json->$name as $menu){
-
                 if(isset($menu->imgPath)){
                      $img =Html::img($menu->imgPath.'/'.$menu->imgName,['data-pathimage'=>$menu->imgPath,'data-filename'=>$menu->imgName]);
                 }else{
