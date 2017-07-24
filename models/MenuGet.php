@@ -37,7 +37,7 @@ class MenuGet extends Menu
                     $img='';
                 }
                 if(isset($menu->menuItem)){
-                    $str .= "<li class=\"ui-state-default wells\"  data-menu=\"$menu->menuItem\"  data-depth=\"$menu->depth\"  data-item=\"$menu->item\"  data-title=\'$menu->text\' ><span class=\"image\">$img</span> $menu->text<span class= \"glyphicon glyphicon-remove del\"></span> <span class=\"glyphicon glyphicon-chevron-down showInput\"></span>";
+                    $str .= "<li class=\"ui-state-default wells\"  data-menu=\"$menu->menuItem\"  data-depth=\"$menu->depth\"  data-item=\"$menu->item\"  data-title=\"$menu->text\" ><span class=\"image\">$img</span> $menu->text<span class= \"glyphicon glyphicon-remove del\"></span> <span class=\"glyphicon glyphicon-chevron-down showInput\"></span>";
                     $str .= "<p class=\"form-group hide\"><label>$menu->text MenuModule::t('translit','title')<input type=\"text\"  class=\"form-control tilteInput\" placeholder=\"".MenuModule::t('translit','Enter title').".\" /></label></p>";
                     $str .= "<p class=\"form-group hide\"><label>".MenuModule::t('translit','class')."<input type=\"text\"  class=\"form-control classInput\" value=\"".$menu->classItem."\" placeholder=\"".MenuModule::t('translit','Enter class')."\" /></label></p>";
                     $str .= "<p class=\"form-group hide\"><label>".MenuModule::t('translit','id')."<input type=\"text\" class=\"form-control idInput\"  value=\"".$menu->idInput."\" placeholder=\"".MenuModule::t('translit','Enter id')."\" /></label></p>";
