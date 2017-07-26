@@ -53,17 +53,17 @@ common\config\main.php
 frontend
 ```php
 <?= MenuView::widget([
-       'name'              =>  'Футер право',
-       'nameAlias'         =>  'slug',
-       'navWidget'         =>  'menu',
-       'navBarOption' => ['class' => false,],
-       'linkTemplate' => '<a href="{url}"><span class="fa fa-angle-right"></span>{label}</a>',
+       'name'              =>  'Футер лево',
+        'nameAlias'         =>  'slug',
+        'menu'              =>['linkTemplate' => '<a href="{url}"><span class="fa fa-angle-right"></span>{label}</a>','options'=>['class' => false]]
 ]);
 ?>
 ```
 + **name** - id базы
 + **nameAlias** - как в pattern будет называться get - запрос
-+ **navWidget** - Какой виджет использоваться menu = Menu, navbar = NavBar
++ **nav** - Если вы используете виджет Nav необходимо указать этот ключ  значением к которому будет настроики виджета в виде пасива согласно документации виджета
++ **menu** - Если вы используете виджет Menu необходимо указать этот ключ  значением к которому будет настроики виджета в виде пасива согласно документации виджета
++ **navBar** - Если вы используете виджет NavBar необходимо указать этот ключ  значением к которому будет настроики виджета в виде пасива согласно документации виджета
 + в остальном я попытался подключить все настройки этих виджетов
 
 если вам не желаете использовать подключение этой модели sirgalas\menu\models\Menu

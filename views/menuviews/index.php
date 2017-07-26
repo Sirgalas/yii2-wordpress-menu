@@ -2,12 +2,11 @@
 use yii\widgets\Menu;
 use yii\bootstrap\NavBar;
 use yii\bootstrap\Nav;
-$contents=json_decode($menu->$content);
+$contents=json_decode($menuQuery->$content);
 $arrMenu= array();
 if(isset($home)){
     $arrMenu[] = ['label' => $home,'url' => [Yii::$app->homeUrl]];
 }
-
 foreach ($contents->menus as $decode) {
     if (isset($decode->menuItem)) {
         $arrMenu[] = ['label' => $decode->text, 'url' => '', 'items' => $modelMenu->Menu($allMenu,$decode->menuItem,$content,$nameAlias), 'linkOptions'=>['data-toggle'=>'not']];
@@ -28,32 +27,16 @@ foreach ($contents->menus as $decode) {
     }
 }
 
+if(!empty($menu)){
+    $menu['items']=$arrMenu;
+    echo Menu::widget(
+        $menu
+    );
 
-
-if($navWidget=='menu'){
-    echo Menu::widget([
-        'items'             =>  $arrMenu,
-        'labelTemplate'     =>  $labelTemplate,
-        'linkTemplate'      =>  $linkTemplate,
-        'options'           =>  $navBarOption,
-        'encodeLabels'      =>  $encodeLabels,
-        'activeCssClass'    =>  $activeCssClass,
-        'firstItemCssClass' =>  $firstItemCssClass,
-        'lastItemCssClass'  =>  $lastItemCssClass,
-    ]);
 }
-if($navWidget=='navbar'){
-    NavBar::begin([
-        'brandLabel'        =>  $brandLabel,
-        'brandUrl'          =>  $brandUrl,
-        'options'           =>  $navBarOption,
-        'containerOptions'  =>  $containerOptions,
-    ]);
-    echo Nav::widget([
-        'options'   =>  $navOption,
-        'items'     =>  $arrMenu,
-    ]);
+if(!empty($nav)){
+    NavBar::begin($nav);
+    $navBar['items']=$arrMenu;
+    echo Nav::widget($navbar);
     NavBar::end();
 }
-
- ?> 
