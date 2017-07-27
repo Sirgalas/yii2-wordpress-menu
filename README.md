@@ -114,5 +114,22 @@ use sirgalas\menu\behaviors\MenuBaseWordpressBehavior;
 + ***name*** столбец содержащий название строки базы
 + ***content*** солбец куда необходимо сохранять данные меню
 + ***serviceField nameServiceField*** используются для поисковой модели, это поисковое поле для выборки из вашей базы всех меню
-к примеру у меня это так
+---
+
+в общем итоге вот так у меня получилось это
+backend
+вложеное меню (выпадающее меню)
+https://nimbus.everhelper.me/client/notes/share/1033948/fpvyz4o96inaqhpv7246
+основное меню 
+https://nimbus.everhelper.me/client/notes/share/1033957/qc2xb6wgcwysaac2gsfz
+
+есть возможность определять вложенность таким образом 
+https://nimbus.everhelper.me/client/notes/share/1033970/aycfg9ylkiy8uwvrh2xi
+
+
+frontend
+https://dl.dropboxusercontent.com/1/view/hlv8uxg4wm53s6t/Apps/Shutter/%C3%90%C2%92%C3%91%C2%8B%C3%90%C2%B4%C3%90%C2%B5%C3%90%C2%BB%C3%90%C2%B5%C3%90%C2%BD%C3%90%C2%B8%C3%90%C2%B5_004.png
+https://dl.dropboxusercontent.com/1/view/8glnfop5ozhmdal/Apps/Shutter/%C3%90%C2%92%C3%91%C2%8B%C3%90%C2%B4%C3%90%C2%B5%C3%90%C2%BB%C3%90%C2%B5%C3%90%C2%BD%C3%90%C2%B8%C3%90%C2%B5_005.png
+
+в планах допилить верстку и отойти от json формата докумената. Буду рад любой помощи. Присоединяйтесь
 ```php 'description'=>'menus'```
