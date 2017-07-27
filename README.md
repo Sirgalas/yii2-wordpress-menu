@@ -131,5 +131,7 @@ frontend
 https://dl.dropboxusercontent.com/1/view/hlv8uxg4wm53s6t/Apps/Shutter/%C3%90%C2%92%C3%91%C2%8B%C3%90%C2%B4%C3%90%C2%B5%C3%90%C2%BB%C3%90%C2%B5%C3%90%C2%BD%C3%90%C2%B8%C3%90%C2%B5_004.png
 https://dl.dropboxusercontent.com/1/view/8glnfop5ozhmdal/Apps/Shutter/%C3%90%C2%92%C3%91%C2%8B%C3%90%C2%B4%C3%90%C2%B5%C3%90%C2%BB%C3%90%C2%B5%C3%90%C2%BD%C3%90%C2%B8%C3%90%C2%B5_005.png
 
+
+вот ссылки на сайты где использовано расширение [магазин одежды] (http://miliydom.com.ua/), [магазин косметики](http://krymray.ru/)
 в планах допилить верстку и отойти от json формата докумената. Буду рад любой помощи. Присоединяйтесь
 ```php 'description'=>'menus'```
