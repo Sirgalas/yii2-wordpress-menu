@@ -12,18 +12,26 @@ foreach ($contents->menus as $decode) {
         $arrMenu[] = ['label' => $decode->text, 'url' => '', 'items' => $modelMenu->Menu($allMenu,$decode->menuItem,$content,$nameAlias), 'linkOptions'=>['data-toggle'=>'not']];
     } elseif($decode->depthMenu){
         foreach ($decode->depthMenu as $depth){
-            $item[] = [
-                'label' => $depth->title,
-                'url' => [
-                    $depth->path,
-                    $nameAlias => $depth->alias
-                ]
-            ];
+            if(isset($jsonDecode->aliasInput)){
+                $item[] = [
+                    'label' => $jsonDecode->title,
+                    'url' => [
+                        $jsonDecode->aliasInput
+                    ]
+                ];
+            }else {
+                $item[] = [
+                    'label' => $depth->title,
+                    'url' => [
+                        $depth->path,
+                        $nameAlias => $depth->alias
+                    ]
+                ];
+            }
         }
         $arrMenu[] = ['label' => $decode->text, 'url' => '', 'items' => $items, 'linkOptions'=>['data-toggle'=>'not']];
-    }
-    else {
-        $arrMenu[] = ['label' => $decode->title,'url' => [$decode->path,$nameAlias=>$decode->alias]];
+    }else {
+        $arrMenu[] = ['label' => $decode->title,'url' => $decode->aliasInput?[$decode->aliasInput]:[$decode->path,$nameAlias=>$decode->alias]];
     }
 }
 

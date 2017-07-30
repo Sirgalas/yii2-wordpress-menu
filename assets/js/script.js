@@ -83,7 +83,7 @@ jQuery(document).ready(function(){
         var id = $(this).parents('li.wells').attr('id');
         var className = $(this).parents('li.wells').attr('data-model');
         var extId=$(this).parents('ul').attr('data-class');
-      
+
         $.ajax({
             type: "GET",
             url:url,
@@ -141,6 +141,7 @@ jQuery(document).ready(function(){
                 var depth = parseInt($(this).attr('data-depth'));
                 var path = $(this).data('path');
                 var title = '';
+                var aliasInput='';
                 if ($(this).find('img')) {
                     var img = $(this).find('img');
                     var imgPath = img.attr('data-pathimage');
@@ -164,6 +165,11 @@ jQuery(document).ready(function(){
                 } else {
                     idInput = $(this).find('.idInput').val();
                 }
+                if ($(this).find('.aliasInput').val().length == 0) {
+                    aliasInput = false;
+                } else {
+                    aliasInput = $(this).find('.aliasInput').val();
+                }
                 var key = 'menu' + $(this).attr('data-item');
 
                 var addmenu = {
@@ -172,6 +178,7 @@ jQuery(document).ready(function(){
                     alias: alias,
                     depth: depth,
                     path: path,
+                    aliasInput:aliasInput,
                     classItem:classItem,
                     idInput:idInput,
                     imgPath: imgPath,
@@ -238,6 +245,7 @@ jQuery(document).ready(function(){
                         var depth = parseInt($(this).attr('data-depth'));
                         var path = $(this).data('path');
                         var title = '';
+                        var aliasInput='';
                         if ($(this).find('img')) {
                             var img = $(this).find('img');
                             var imgPath = img.attr('data-pathimage');
@@ -261,6 +269,11 @@ jQuery(document).ready(function(){
                         } else {
                             idInput = $(this).find('.idInput').val();
                         }
+                        if ($(this).find('.aliasInput').val().length == 0) {
+                            aliasInput = false;
+                        } else {
+                            aliasInput = $(this).find('.aliasInput').val();
+                        }
                         var key = 'munu' + $(this).attr('data-item');
                         var addmenuExt = {
                             title: title,
@@ -268,6 +281,7 @@ jQuery(document).ready(function(){
                             alias: alias,
                             depth: depth,
                             path: path,
+                            aliasInput:aliasInput,
                             classItem:classItem,
                             idInput:idInput,
                             imgPath: imgPath,

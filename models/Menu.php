@@ -56,24 +56,44 @@ class Menu extends ActiveRecord
                 foreach ($objectVars as $key => $value) {
                     if (strpos($key,'extra') ===0) {
                         foreach ($value as $jsonDecode) {
-                            $item[] = [
-                                'label' => $jsonDecode->title,
-                                'url' => [
-                                    $jsonDecode->path,
-                                    $nameAlias => $jsonDecode->alias,
-                                    'option' => ['class' => 'extra']
-                                ]
-                            ];
+                            if(isset($jsonDecode->aliasInput)){
+                                $item[] = [
+                                    'label' => $jsonDecode->title,
+                                    'url' => [
+                                        $jsonDecode->aliasInput
+                                    ]
+                                ];
+                            }else{
+                                $item[] = [
+                                    'label' => $jsonDecode->title,
+                                    'url' => [
+                                        $jsonDecode->path,
+                                        $nameAlias => $jsonDecode->alias,
+                                        'option' => ['class' => 'extra']
+                                    ]
+                                ];
+                            }
                         }
                     }else{
                         foreach ($value as $jsonDecode) {
-                            $item[] = [
-                                'label' => $jsonDecode->title,
-                                'url' => [
-                                    $jsonDecode->path,
-                                    $nameAlias=>$jsonDecode->alias
-                                ]
-                            ];
+                            if(isset($jsonDecode->aliasInput)){
+                                
+                                $item[] = [
+                                    'label' => $jsonDecode->title,
+                                    'url' => [
+                                        $jsonDecode->aliasInput
+                                    ]
+                                ];
+                            }else{
+                                $item[] = [
+                                    'label' => $jsonDecode->title,
+                                    'url' => [
+                                        $jsonDecode->path,
+                                        $nameAlias=>$jsonDecode->alias
+                                    ]
+                                ];
+                            }
+                            
                         }
                     }
                 }
