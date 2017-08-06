@@ -9,7 +9,8 @@ class m170503_100303_menu_setup extends Migration
         $this->createTable('{{%menu_table}}',[
             'id'=>$this->primaryKey(),
             'name'=>$this->string()->notNull()->unique(),
-            'content'=>$this->text()->notNull()
+            'content'=>$this->text()->notNull(),
+            'parent_id' =>$this->integer()
         ]) ;
     }
 
