@@ -7,6 +7,7 @@ use Yii;
 use yii\db\ActiveRecord;
 use sirgalas\menu\MenuModule;
 use sirgalas\menu\behaviors\MenuBaseWordpressBehavior;
+use yii\helpers\Json;
 class Menu extends ActiveRecord
 {
 
@@ -50,7 +51,7 @@ class Menu extends ActiveRecord
         $item=[];
         foreach ($menus as $menu){
             if($menu->id==$parentId){
-                $dropMenu = json_decode($menu->$content);
+                $dropMenu = Json::decode($menu->$content);
                 $dropMenuArr = array();
                 $objectVars = get_object_vars($dropMenu);
                 foreach ($objectVars as $key => $value) {
@@ -77,7 +78,6 @@ class Menu extends ActiveRecord
                     }else{
                         foreach ($value as $jsonDecode) {
                             if(isset($jsonDecode->aliasInput)){
-                                
                                 $item[] = [
                                     'label' => $jsonDecode->title,
                                     'url' => [
@@ -103,7 +103,7 @@ class Menu extends ActiveRecord
     }
 
     public function renderMenu($menu,$nameAlias,$allMenu=null,$content=null){
-        $contents=json_decode($menu->$content);
+        $contents=Json::decode($menu->$content);
         foreach ($contents->menus as $decode) {
             if (isset($decode->menuItem)) {
                 if(isset($decode->aliasInput)){
@@ -132,7 +132,7 @@ class Menu extends ActiveRecord
         $item=[];
         foreach ($allMenu as $menu){
             if($menu->id==$parentId){
-                $dropMenu = json_decode($menu->$content);
+                $dropMenu = Json::decode($menu->$content);
                 $objectVars = get_object_vars($dropMenu);
                 foreach ($objectVars as $key => $value) {
                     $arrExtra=array();
