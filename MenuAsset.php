@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 04.05.17
- * Time: 15:34
- */
 
 namespace sirgalas\menu;
 use yii\web\AssetBundle;
