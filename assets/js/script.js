@@ -100,7 +100,6 @@ jQuery(document).ready(function(){
     };
     $('#formMenu').on('beforeSubmit', function (ev) {
         var menu = {};
-        var menuExt = {};
         var extra = {};
         var menus = {};
         var count = 1;
@@ -208,7 +207,8 @@ jQuery(document).ready(function(){
             menus[keyMenus]=menu;
         });
 
-        $('.extra').each(function () {
+        $('.extra').each(function () { 
+            var menuExt = {};
             if($(this).children("li").length!=0) {
                 var keyExtra = $(this).attr('data-class');
                 $(this).children("li").each(function (i) {
