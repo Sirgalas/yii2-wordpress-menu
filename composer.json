@@ -25,7 +25,7 @@
         "source": "https://github.com/sirgalas/yii2-wordpress-menu"
     },
     "require": {
-        "zainiafzan/yii2-dropzone": "dev-master",
+        "zainiafzan/yii2-dropzone": "*",
         "kartik-v/yii2-widget-select2": "@dev",
          "yiisoft/yii2-imagine": "^2.1"
     },
