@@ -12,6 +12,7 @@
     "homepage": "https://github.com/Sirgalas/yii2-wordpress-menu",
     "time": "2017-07-14",
     "license": "MIT",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Serge Beloventsev",
