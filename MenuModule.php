@@ -12,14 +12,14 @@ class MenuModule extends \yii\base\Module
     /**
      * @var
      */
-    public $modelDb;
+   /* public $modelDb;
     //public $model;
     public $models;
     public $label;
     public $imageDownloadPath;
     public $imageSetPath;
     public $imageResize;
-    public $extra_menu;
+    public $extra_menu;*/
     
     public $controllerNamespace = 'sirgalas\menu\controllers';
     /**
