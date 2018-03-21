@@ -18,9 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a(MenuModule::t('translit','Create menu'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?php
-   
-    if(empty($module->modelDb)){
-         echo GridView::widget([
+        echo GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
@@ -28,18 +26,5 @@ $this->params['breadcrumbs'][] = $this->title;
                 'name',
                 ['class' => 'yii\grid\ActionColumn'],
             ],
-        ]);
-    }else{
-        $menuModel=Yii::$app->modules['menu']->modelDb;
-        $menuSetup=new $menuModel;
-        echo GridView::widget([
-            'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
-            'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
-                $menuSetup->getName(),
-                ['class' => 'yii\grid\ActionColumn'],
-            ],
         ]); ?>
-    <?php } ?>
 </div>

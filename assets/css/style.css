@@ -106,3 +106,7 @@ body .dropFileHide{
     display: none;
 }
 
+.clearfix{
+    clear: both;
+}
+

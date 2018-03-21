@@ -25,9 +25,12 @@
         "source": "https://github.com/sirgalas/yii2-wordpress-menu"
     },
     "require": {
+        "yiisoft/yii2-jui": "~2.0.0",
         "zainiafzan/yii2-dropzone": "@dev",
         "kartik-v/yii2-widget-select2": "@dev",
-         "yiisoft/yii2-imagine": "^2.1"
+        "yiisoft/yii2-imagine": "^2.1",
+        "sjaakp/yii2-symbol-picker": "@dev",
+        "kartik-v/yii2-widget-fileinput": "@dev"
     },
     "autoload": {
         "psr-4": {

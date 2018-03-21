@@ -12,15 +12,12 @@ class MenuModule extends \yii\base\Module
     /**
      * @var
      */
-   /* public $modelDb;
-    //public $model;
     public $models;
     public $label;
     public $imageDownloadPath;
     public $imageSetPath;
     public $imageResize;
-    public $extra_menu;*/
-    
+    public $extra_menu;
     public $controllerNamespace = 'sirgalas\menu\controllers';
     /**
      * @inheritdoc
@@ -46,30 +43,25 @@ class MenuModule extends \yii\base\Module
         return Yii::t('sirgalas/menu/'.$category, $message, $params, $language);
     }
 
-
-
-    public function getAllModels(){
-        if(isset($this->model)) {
-            if(isset($model['label'])){
-                $label=$this->model['label'];
-            }else{
-                $label='выбрать '.$this->model['class'];
-            }
-           $model[$label] = ArrayHelper::map($this->model['class']::find()->asArray()->all(),$this->model['id'],$this->model['title']);;
+    public function getArrEntities(){
+        $datas=array();
+        foreach ($this->models as $model){
+            $entities=new $model;
+            $datas[$model]=ArrayHelper::map($model::find()->asArray()->all(),$entities->getId(),$entities->getTitle());
         }
-        if(isset($this->models)){
-            foreach ($this->models as $models){
-                    if(isset($models['label'])){
-                        $label=$models['label'];
-                    }else{
-                        $label='выбрать '.$models['class'];
-                    }
-                    $model[$label.'%'.$models['class'].'%'.$models['path'].'%'.$models['alias']]=ArrayHelper::map($models['class']::find()->asArray()->all(),$models['id'],$models['title']);
-            }
-
-        }
-        return $model;
+        if(empty($datas))
+            throw new \RuntimeException(self::t('app','not model data menu'));
+        return $datas;
     }
+    
+    public function getExtraMenu(){
+        $extra_arr=array();
+        if($this->extra_menu)
+            return array_pad($extra_arr,$this->extra_menu,0);
+        return false;
+            
+    }
+    
     
 
     /**
